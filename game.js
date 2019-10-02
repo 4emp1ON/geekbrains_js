@@ -1,8 +1,8 @@
 'use strict';
 
 const settings = {
-    rowCount: 10,
-    colCount: 10,
+    rowCount: 15,
+    colCount: 15,
     startPositionX: 0,
     startPositionY: 0,
 };
@@ -20,8 +20,8 @@ const player = {
         switch (direction) {
             case 's':
                 this.y++;
-                if (this.y > 9) {
-                    this.y = 9;
+                if (this.y > settings.rowCount-1) {
+                    this.y = settings.rowCount-1;
                     alert('Туда не ходи, сюда ходи');
                     game.log[game.log.length - 1] += ' ошибка перемещения, попытка выйти за пределы поля';
                     break;
@@ -39,8 +39,8 @@ const player = {
                 break;
             case 'd':
                 this.x++;
-                if (this.x > 9) {
-                    this.x = 9;
+                if (this.x > settings.rowCount-1) {
+                    this.x = settings.rowCount-1;
                     alert('Туда не ходи, сюда ходи');
                     game.log[game.log.length - 1] += ' ошибка перемещения, попытка выйти за пределы поля';
                     break;
