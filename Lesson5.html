@@ -2,117 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lesson 4 - Objects</title>
-    <script src="./game.js"></script>
-    <script src="./millionaire.js"></script>
+    <title>Lesson 5 - DOM</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script>
-// const obj = {};
-// const obj = new Object();
-// console.log(obj);
+<div class="chess_board">
 
-// function getPropName(prop) {
-//   return `testing new prop ${prop}`;
-// }
+</div>
 
-// Свойства
-// const myCar = {
-//   manufacturer: 'BMW',
-//   color: 'blue',
-//   power: 300,
-//   [getPropName('wow')]: 2,
-// };
-// myCar.color = 'red';
-// myCar.someProp = 'test';
-// myCar['bla bla-bla'] = 'test2';
-// console.log(myCar);
-// delete myCar.color;
-// console.log(myCar);
+<div class="cart">
 
-// Методы
-// const myCar = {
-//   manufacturer: 'BMW',
-//   color: 'blue',
-//   engine: {
-//     power: 300,
-//     code: 'B58',
-//   },
-//   possibleColors: ['black', 'red', 'white', 'brown'],
-//   beep() {
-//     console.log('Машина подала сигнал');
-//   },
-//   [Symbol.iterator]: function* () {
-//     yield 'hi';
-//     yield 'bye';
-//   }
-// };
-// console.log(myCar);
-// myCar.beep();
+</div>
 
-// console.log(myCar.engine.power);
+<div class="catalog">
 
-// for (let i = 0; i < myCar.possibleColors.length; i++) {
-//   console.log(`Возможный цвет автомобиля: ${myCar.possibleColors[i]}`);
-// }
-// console.log(Object.keys(myCar));
+</div>
+<script src="./chess.js"></script>
+<script src="./cart.js"></script>
 
-// for (const prop in myCar) {
-//   console.log(prop);
-// }
-// for (const val of myCar) {
-//   console.log(val);
-// }
-// console.log(myCar);
-
-// function inc(b) {
-//   ++b;
-//   console.log(b);
-// }
-//
-// let a = 1;
-// console.log(a); // 1
-// inc(a);
-// console.log(a); // 1
-
-// const obj = {
-//   num: 5,
-// };
-//
-// function inc(a) {
-//   a.num++;
-// }
-//
-// console.log(obj.num);
-// console.log(obj);
-// inc(obj);
-// console.log(obj.num);
-// console.log(obj);
-
-// контекст
-// function getObject() {
-//   return {
-//     number: 5,
-//     sayNumber() {
-//       console.log(`Номер в данном объекте ${this.number}`)
-//     }
-//   }
-// }
-// const myObject = getObject();
-// myObject.sayNumber();
-
-// Проверка на ключ в массиве
-// const arr = ['hello', 'hi', 'aloha'];
-// console.log('10' in arr);
-
-// Копирование объектов и массивов
-// const obj = {test: 'test'};
-// const objCopy = {...obj};
-// console.log(objCopy);
-//
-// const arr = [1, 2, 3];
-// const arrCopy = [...arr];
-// console.log(arrCopy);
-</script>
 </body>
 </html>
