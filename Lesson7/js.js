@@ -212,6 +212,7 @@ const game = {
   food,
   status,
   tickInterval: null,
+  score: 0,
 
   init(userSettings) {
     this.config.init(userSettings);
@@ -234,6 +235,8 @@ const game = {
     this.stop();
     this.snake.init(this.getStartSnakeBody(), 'up');
     this.food.setCoordinates(this.getRandomFreeCoordinates());
+    this.score = 0;
+    this.showScore();
     this.render();
   },
 
@@ -253,6 +256,8 @@ const game = {
     this.status.setFinished();
     clearInterval(this.tickInterval);
     this.setPlayButton('Игра закончена', true);
+    alert(`Игра окончена с результатом: ${this.score} очков!`);
+    this.score = 0;
   },
 
   tickHandler() {
@@ -262,6 +267,7 @@ const game = {
 
     if (this.food.isOnPoint(this.snake.getNextStepHeadPoint())) {
       this.snake.growUp();
+      this.addScore();
       this.food.setCoordinates(this.getRandomFreeCoordinates());
 
       if (this.isGameWon()) {
@@ -273,6 +279,15 @@ const game = {
     this.render();
   },
 
+  addScore() {
+    this.score += 1;
+    this.showScore();
+  },
+
+  showScore () {
+    let scoreTag = document.querySelector('.score');
+    scoreTag.innerText = `Ваши очки: ${this.score}`;
+  },
   setPlayButton(textContents, isDisabled = false) {
     const playButton = document.getElementById('playButton');
 
