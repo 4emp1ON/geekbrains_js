@@ -1,7 +1,7 @@
 "use strict";
 
 const settings = {
-  rowsCount: 21,
+  rowsCount : 21,
   colsCount: 21,
   speed: 2,
   winFoodCount: 50,
@@ -145,12 +145,16 @@ const snake = {
 
     switch(this.direction) {
       case 'up':
+        if (firstPoint.y-1<0) {return {x: firstPoint.x, y: settings.rowsCount-1};}
         return {x: firstPoint.x, y: firstPoint.y - 1};
       case 'right':
+        if (firstPoint.x+1>settings.colsCount-1){return {x: 0, y: firstPoint.y};}
         return {x: firstPoint.x + 1, y: firstPoint.y};
       case 'down':
+        if (firstPoint.y+1>settings.rowsCount-1){return {x: firstPoint.x, y: 0};}
         return {x: firstPoint.x, y: firstPoint.y + 1};
       case 'left':
+        if (firstPoint.x-1<0) {return {x: settings.colsCount-1, y: firstPoint.y};}
         return {x: firstPoint.x - 1, y: firstPoint.y};
     }
   },
@@ -391,8 +395,8 @@ const game = {
     const nextHeadPoint = this.snake.getNextStepHeadPoint();
 
     return !this.snake.isOnPoint(nextHeadPoint) &&
-      nextHeadPoint.x < this.config.getColsCount() &&
-      nextHeadPoint.y < this.config.getRowsCount() &&
+      // nextHeadPoint.x < this.config.getColsCount() &&
+      // nextHeadPoint.y < this.config.getRowsCount() &&
       nextHeadPoint.x >= 0 &&
       nextHeadPoint.y >= 0;
   },
